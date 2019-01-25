@@ -510,6 +510,8 @@ module Sfn
       # @param path [String] modification path within structure
       # @return [Smash]
       def diff_init(diff, path)
+        require 'pry'
+        binding.pry
         Smash.new.tap do |di|
           if diff.size > 1
             updated = diff.detect { |x| x.first == "+" }
